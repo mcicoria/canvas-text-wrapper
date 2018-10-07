@@ -8,6 +8,7 @@
       sizeToFill: false,
       maxFontSizeToFill: false,
       lineHeight: 1,
+      enableMaxLineHeight: false,
       allowNewLine: true,
       lineBreak: 'auto',
       textAlign: 'left',
@@ -140,6 +141,9 @@
     function adjustFontSize(size) {
       setFont(size);
       lineHeight = size;
+      if(opts.enableMaxLineHeight) {
+        lineHeight *= opts.lineHeight;
+      }
       wrap();
     }
 
